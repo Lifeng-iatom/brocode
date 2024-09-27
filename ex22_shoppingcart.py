@@ -5,11 +5,15 @@ while True:
       food = input("Enter a food to buy (q to quit):")
       if food.lower()=='q':
             break
-      else:
+      isprice= True
+      while isprice:
             price = input("Enter a price of a {food}:$")
-
-            foods.append(food)
-            prices.append(price)
+            if price.isdigit():
+                  foods.append(food)
+                  prices.append(price)
+                  isprice = False
+            else:
+                  print("invalid price")
 
 
 print("----- YOUR CART -----")
